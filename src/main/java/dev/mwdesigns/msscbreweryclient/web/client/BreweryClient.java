@@ -7,19 +7,14 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Objects;
 import java.util.UUID;
 
-@ConfigurationProperties(prefix = "snafu.brewery", ignoreUnknownFields = false)
+@ConfigurationProperties(value = "snafu.brewery", ignoreUnknownFields = false)
 @Component
 public class BreweryClient {
     private String apihost;
     public final String BEER_PATH_V1 = "/api/v1/beer/";
-
-    public void setApihost(String apihost) {
-        this.apihost = apihost;
-    }
-
-    @Autowired
     private final RestTemplate restTemplate;
 
     public BreweryClient(RestTemplateBuilder restTemplateBuilder) {
@@ -27,6 +22,15 @@ public class BreweryClient {
     }
 
     public BeerDto getBeerById(UUID beerId){
-        return restTemplate.getForObject(apihost+BEER_PATH_V1+beerId.toString(),BeerDto.class);
+        BeerDto getDTO = restTemplate.getForObject(apihost+BEER_PATH_V1+beerId.toString(),BeerDto.class);
+        System.out.println(Objects.requireNonNull(getDTO).getBeerName());
+        System.out.println(getDTO.getBeerStyle());
+        System.out.println("This runs in the BeerDto class");
+        return getDTO;
     }
+
+    public void setApihost(String apihost) {
+        this.apihost = apihost;
+    }
+
 }
