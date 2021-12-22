@@ -12,7 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class BeerDto {
-    private UUID id;
+    private UUID beerId;
     private String beerName;
     private String beerStyle;
     private Long upc;

@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "snafu.brewery.apihost",
+      "type": "java.lang.String",
+      "description": "Description for snafu.brewery.apihost."
+    },
+    {
+      "name": "snafu.customer.apihost",
+      "type": "java.lang.String",
+      "description": "Description for snafu.customer.apihost."
+    }
+  ] }
