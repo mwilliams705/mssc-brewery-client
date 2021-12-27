@@ -9,5 +9,20 @@
       "name": "snafu.customer.apihost",
       "type": "java.lang.String",
       "description": "Description for snafu.customer.apihost."
+    },
+    {
+      "name": "snafu.rest.defaultmaxtotalconnections",
+      "type": "java.lang.String",
+      "description": "Description for snafu.rest.defaultmaxtotalconnections."
+    },
+    {
+      "name": "snafu.rest.maxtotalconnections",
+      "type": "java.lang.String",
+      "description": "Description for snafu.rest.maxtotalconnections."
+    },
+    {
+      "name": "snafu.rest.connectionrequesttimeout",
+      "type": "java.lang.String",
+      "description": "Description for snafu.rest.connectionrequesttimeout."
     }
   ] }
